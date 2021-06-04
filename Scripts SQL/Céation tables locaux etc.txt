@@ -1,0 +1,44 @@
+CREATE TABLE Fonction
+(
+  no_Fonction INT NOT NULL,
+  Nom VARCHAR NOT NULL,
+  PRIMARY KEY (no_Fonction)
+);
+
+CREATE TABLE Caracteristiques
+(
+  Description VARCHAR NOT NULL,
+  no_Carac INT NOT NULL,
+  PRIMARY KEY (no_Carac)
+);
+
+CREATE TABLE Departement
+(
+  NomDep VARCHAR NOT NULL,
+  no_Dep INT NOT NULL,
+  PRIMARY KEY (no_Dep)
+);
+
+CREATE TABLE SousLocaux
+(
+  no_SL INT NOT NULL,
+  nom VARCHAR NOT NULL,
+  PRIMARY KEY (no_SL)
+);
+
+CREATE TABLE Local
+(
+  NomLoc CHAR(7) NOT NULL,
+  Capacite INT NOT NULL,
+  Note VARCHAR,
+  no_Fonction INT NOT NULL,
+  no_Carac INT,
+  no_Dep INT NOT NULL,
+  no_SL INT,
+  PRIMARY KEY (NomLoc),
+  FOREIGN KEY (no_Fonction) REFERENCES Fonction(no_Fonction),
+  FOREIGN KEY (no_Carac) REFERENCES Caracteristiques(no_Carac),
+  FOREIGN KEY (no_Dep) REFERENCES Departement(no_Dep),
+  FOREIGN KEY (no_SL) REFERENCES SousLocaux(no_SL),
+  UNIQUE (no_Carac)
+);
