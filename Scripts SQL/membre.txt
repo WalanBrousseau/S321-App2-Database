@@ -1,0 +1,8 @@
+create table membre (
+	cip		varchar(1024)		not null,
+	nom_membre	varchar(1024)		null,
+	departement	varchar(1024)		not null,
+	statut		varchar(1024)		not null,
+	primary key (cip)
+);
+
