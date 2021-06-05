@@ -1,0 +1,170 @@
+--LISTE DES FONCTIONS
+INSERT INTO fonction VALUES(0110, 'Salle de classe général');
+INSERT INTO fonction VALUES(0111, 'Salle de classe spécialisée');
+INSERT INTO fonction VALUES(0120, 'Salle de séminaire');
+INSERT INTO fonction VALUES(0121, 'Cubicules');
+INSERT INTO fonction VALUES(0210, 'Laboratoire informatique');
+INSERT INTO fonction VALUES(0211, 'Laboratoire denseignement spécialisé');
+INSERT INTO fonction VALUES(0212, 'Atelier');
+INSERT INTO fonction VALUES(0213, 'Salle à dessin');
+INSERT INTO fonction VALUES(0214, 'Atelier (civil)');
+INSERT INTO fonction VALUES(0215, 'Salle de musique');
+INSERT INTO fonction VALUES(0216, 'Atelier sur 2 étages, conjoint avec autre local');
+INSERT INTO fonction VALUES(0217, 'Salle de conférence');
+INSERT INTO fonction VALUES(0372, 'Salle de réunion');
+INSERT INTO fonction VALUES(0373, 'Salle dentrevue et de tests');
+INSERT INTO fonction VALUES(0510, 'Salle de lecture ou de consultation');
+INSERT INTO fonction VALUES(0620, 'Auditorium');
+INSERT INTO fonction VALUES(0625, 'Salle de concert');
+INSERT INTO fonction VALUES(0640, 'Salle daudience');
+INSERT INTO fonction VALUES(0930, 'Salon du personnel');
+INSERT INTO fonction VALUES(1030, 'Studio denregistrement');
+INSERT INTO fonction VALUES(1260, 'Hall dentrée');
+
+--Liste caractéristiques
+INSERT INTO caracteristique VALUES(0, 'Connexion à Internet');
+INSERT INTO caracteristique VALUES(1, 'Tables fixes en U et chaises mobiles');
+INSERT INTO caracteristique VALUES(2, 'Monoplaces');
+INSERT INTO caracteristique VALUES(3, 'Tables fixes et chaises fixes');
+INSERT INTO caracteristique VALUES(6, 'Tables pour 2 ou + et chaises mobiles');
+INSERT INTO caracteristique VALUES(7, 'Tables mobiles et chaises mobiles');
+INSERT INTO caracteristique VALUES(8, 'Tables hautes et chaises hautes');
+INSERT INTO caracteristique VALUES(9, 'Tables fixes et chaises mobiles');
+INSERT INTO caracteristique VALUES(11, 'Ecran');
+INSERT INTO caracteristique VALUES(14, 'Rétroprojecteur');
+INSERT INTO caracteristique VALUES(15, 'Gradins');
+INSERT INTO caracteristique VALUES(16, 'Fenêtres');
+INSERT INTO caracteristique VALUES(17, '1 piano');
+INSERT INTO caracteristique VALUES(18, '2 pianos');
+INSERT INTO caracteristique VALUES(19, 'Autres instruments');
+INSERT INTO caracteristique VALUES(20, 'Système de son');
+INSERT INTO caracteristique VALUES(21, 'Salle réservée (spéciale)');
+INSERT INTO caracteristique VALUES(22, 'Ordinateurs PC');
+INSERT INTO caracteristique VALUES(23, 'Ordinateurs SUN pour génie électrique');
+INSERT INTO caracteristique VALUES(25, 'Ordinateurs (oscillomètre et multimètre)');
+INSERT INTO caracteristique VALUES(26, 'Ordinateurs modélisation des structures');
+INSERT INTO caracteristique VALUES(27, 'Ordinateurs PC');
+INSERT INTO caracteristique VALUES(28, 'Equipement pour microélectronique');
+INSERT INTO caracteristique VALUES(29, 'Equipement pour génie électrique');
+INSERT INTO caracteristique VALUES(30, 'Ordinateurs et équipement pour mécatronique');
+INSERT INTO caracteristique VALUES(31, 'Equipement métrologie');
+INSERT INTO caracteristique VALUES(32, 'Equipement de machinerie');
+INSERT INTO caracteristique VALUES(33, 'Equipement de géologie');
+INSERT INTO caracteristique VALUES(34, 'Equipement pour la caractérisation');
+INSERT INTO caracteristique VALUES(35, 'Equipement pour la thermodynamique');
+INSERT INTO caracteristique VALUES(36, 'Equipement pour génie civil');
+INSERT INTO caracteristique VALUES(37, 'Télévision');
+INSERT INTO caracteristique VALUES(38, 'VHS');
+INSERT INTO caracteristique VALUES(39, 'Hauts parleurs');
+INSERT INTO caracteristique VALUES(40, 'Micro');
+INSERT INTO caracteristique VALUES(41, 'Magnétophone à cassette');
+INSERT INTO caracteristique VALUES(42, 'Amplificateur audio');
+INSERT INTO caracteristique VALUES(43, 'Local barré');
+INSERT INTO caracteristique VALUES(44, 'Prise réseau');
+
+--Campus
+INSERT INTO campus VALUES(01, 'Campus principal', 'Sherbrooke');
+INSERT INTO campus VALUES(02, 'Campus de Longueuil', 'Montréal');
+
+--Pavillon
+INSERT INTO pavillon VALUES('A8', 'albert-leblanc', 01);
+INSERT INTO pavillon VALUES('A9', 'albert-leblanc', 01);
+INSERT INTO pavillon VALUES('J1', 'centre sportif yvon-lamarche', 01);
+INSERT INTO pavillon VALUES('J2', 'centre sportif yvon-lamarche', 01);
+INSERT INTO pavillon VALUES('B1', 'george-cabana', 01);
+INSERT INTO pavillon VALUES('B2', 'george-cabana', 01);
+INSERT INTO pavillon VALUES('B6', 'irénée-pinard', 01);
+INSERT INTO pavillon VALUES('C1', 'j.-armand-bombardier', 01);
+INSERT INTO pavillon VALUES('C2', 'j.-armand-bombardier', 01);
+INSERT INTO pavillon VALUES('F1', 'john-s.-bourque', 01);
+INSERT INTO pavillon VALUES('D6', 'marie-victorin', 01);
+INSERT INTO pavillon VALUES('D7', 'marie-victorin', 01);
+INSERT INTO pavillon VALUES('B5', 'multifonctionnel', 01);
+INSERT INTO pavillon VALUES('A10', 'recherche en science humaine et scociales', 01);
+INSERT INTO pavillon VALUES('D8', 'science de la vie', 01);
+INSERT INTO pavillon VALUES('E5', 'vie étudiante', 01);
+
+--Locaux
+INSERT INTO local VALUES('C1', 1007, 21, 0212, NULL, 'grand');
+INSERT INTO local VALUES('C1', 2018, 10, 0212, NULL, 'matériaux composites');
+INSERT INTO local VALUES('C1', 2055, 24, 0211, NULL, NULL);
+INSERT INTO local VALUES('C1', 3014, 25, 0211, '{30}', 'laboratoire mécatronique');
+INSERT INTO local VALUES('C1', 3027, 15, 0211, NULL, 'petit laboratoire de élect');
+INSERT INTO local VALUES('C1', 3016, 50, 0210, NULL, NULL);
+INSERT INTO local VALUES('C1', 3018, 50, 0211, NULL, NULL);
+INSERT INTO local VALUES('C1', 3024, 50, 0211, NULL, NULL);
+INSERT INTO local VALUES('C1', 3035, 50, 0210, '{22}', NULL);
+INSERT INTO local VALUES('C1', 3041, 50, 0210, '{11, 22}', NULL);
+INSERT INTO local VALUES('C1', 3007, 106, 0620, '{11, 14, 24, 38, 40}', 'avec console multi-média');
+INSERT INTO local VALUES('C1', 3010, 30, 0211, NULL, 'laboratoir de conception VLSI');
+INSERT INTO local VALUES('C1', 4016, 91, 0620, '{11, 14, 40, 24}', NULL);
+INSERT INTO local VALUES('C1', 4018, 10, 0212, NULL, 'métallurgie');
+INSERT INTO local VALUES('C1', 4019, 8, 0212, NULL, 'laboratoire accessoire atelier');
+INSERT INTO local VALUES('C1', 4021, 28, 0210, '{22}', NULL);
+INSERT INTO local VALUES('C1', 4023, 108, 0620, '{11, 14, 24, 38, 40}', NULL);
+INSERT INTO local VALUES('C1', 4030, 25, 0211, NULL, 'équipement photoélasticité');
+INSERT INTO local VALUES('C1', 4028, 14, 0210, '{22}', NULL);
+INSERT INTO local VALUES('C1', 4008, 106, 0620, '{11, 14, 24, 38, 40}', NULL);
+INSERT INTO local VALUES('C1', 5012, 35, 0121, NULL, '8 cubicules');
+INSERT INTO local VALUES('C1', 5026, 38, 0210, '{11, 14, 22}', 'ordinateurs');
+INSERT INTO local VALUES('C1', 5028, 50, 0211, '{11, 14, 22}', 'ordinateurs');
+INSERT INTO local VALUES('C1', 5001, 198, 0620, '{11, 14, 24, 38, 40}', 'avec console multi-média');
+INSERT INTO local VALUES('C1', 5009, 50, 0111, '{11, 14, 24, 38, 40}', 'avec console multi-média');
+INSERT INTO local VALUES('C1', 5006, 110, 0620, '{11, 14, 24, 38, 40}', 'avec console multi-média');
+INSERT INTO local VALUES('C2', 0009, 100, 0214, NULL, 'grand et équipé');
+INSERT INTO local VALUES('C2', 1004, 30, 0212, '{33}', 'atelier géologie équipement');
+INSERT INTO local VALUES('C2', 1015, 40, 0211, NULL, 'laboratoire dhydraulique');
+INSERT INTO local VALUES('C2', 1042, 21, 0211, NULL, 'laboratoire chimie-physique');
+INSERT INTO local VALUES('C2', 2040, 40, 0211, NULL, 'laboratoire sans instrument');
+INSERT INTO local VALUES('C2', 2514, 10, 0211, NULL, NULL);
+INSERT INTO local VALUES('D7', 2018, 57, 0111, '{07, 11, 14, 43}', NULL);
+INSERT INTO local VALUES('D7', 3001, 35, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3002, 22, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3007, 54, 0110, '{02, 11}', NULL);
+INSERT INTO local VALUES('D7', 3009, 45, 0110, '{02, 11}', NULL);
+INSERT INTO local VALUES('D7', 3010, 21, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3011, 50, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3012, 54, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3013, 44, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3014, 40, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3015, 48, 0110, '{02, 11}', NULL);
+INSERT INTO local VALUES('D7', 3016, 125, 0620, '{11, 14, 24, 39, 43}', 'avec console multi-média');
+INSERT INTO local VALUES('D7', 3017, 45, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3019, 48, 0110, '{02, 11, 14}', NULL);
+INSERT INTO local VALUES('D7', 3020, 35, 0110, '{02, 11, 14, 16}', 'un mur est en fenêtre');
+
+--Département
+INSERT INTO departement VALUES(1, 'génie informatique et génie électrique');
+INSERT INTO departement VALUES(2, 'génie mécanique');
+INSERT INTO departement VALUES(3, 'génie biotechnologie');
+INSERT INTO departement VALUES(4, 'génie civil');
+
+--Status des membres
+INSERT INTO status VALUES(1, 'étudiants');
+INSERT INTO status VALUES(2, 'enseignants');
+INSERT INTO status VALUES(3, 'personnel de soutien');
+INSERT INTO status VALUES(4, 'administrateur');
+
+--Membres
+INSERT INTO membre VALUES('brow2801', 'Walan Brousseau', 4, 1);
+INSERT INTO membre VALUES('leca2312', 'Leclerc Alexandre', 1, 1);
+INSERT INTO membre VALUES('dioj2117', 'Dionne Joey', 2, 2);
+INSERT INTO membre VALUES('libv2001', 'Libioulle Valentin', 3, 3);
+INSERT INTO membre VALUES('cars2019', 'Carrier Simon', 4, 4);
+INSERT INTO membre VALUES('jutj2701', 'Juteau Jean-Michel', 1, 3);
+INSERT INTO membre VALUES('boug2128', 'Boucher Gabriel', 2, 2);
+INSERT INTO membre VALUES('colp2502', 'Collin Philippe', 3, 1);
+INSERT INTO membre VALUES('brid2302', 'Briand Danik', 4, 2);
+INSERT INTO membre VALUES('alle2004', 'Allard Emeri', 2, 2);
+INSERT INTO membre VALUES('mate2002', 'Matte Eric', 4, 4);
+INSERT INTO membre VALUES('sanj2302', 'Santerre Jonathan', 1, 1);
+INSERT INTO membre VALUES('frem2110', 'Frenette Marc-André', 2, 2);
+
+--Réservations
+INSERT INTO reservation VALUES(1, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'brow2801', 'C1', 1007);
+INSERT INTO reservation VALUES(2, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'leca2312', 'C2', 1015);
+INSERT INTO reservation VALUES(3, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'dioj2117', 'C2', 1004);
+INSERT INTO reservation VALUES(4, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'libv2001', 'D7', 3020);
+INSERT INTO reservation VALUES(5, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'cars2019', 'D7', 3019);
+
+
