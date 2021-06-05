@@ -1,0 +1,90 @@
+CREATE TABLE Fonction
+(
+  id_fonction INT NOT NULL,
+  Nom VARCHAR NOT NULL,
+  PRIMARY KEY (id_fonction)
+);
+
+CREATE TABLE Caracteristique
+(
+  id_carac INT NOT NULL,
+  Description VARCHAR NOT NULL,
+  PRIMARY KEY (id_carac)
+);
+
+CREATE TABLE Departement
+(
+  id_departement INT NOT NULL,
+  NomDep VARCHAR NOT NULL,
+  PRIMARY KEY (id_departement)
+);
+
+
+CREATE TABLE Status
+(
+  id_status INT NOT NULL,
+  nomStatus VARCHAR NOT NULL,
+  PRIMARY KEY (id_status)
+);
+
+CREATE TABLE Campus
+(
+  id_campus INT NOT NULL,
+  nom VARCHAR NOT NULL,
+  ville VARCHAR NOT NULL,
+  PRIMARY KEY (id_campus)
+);
+
+CREATE TABLE Membre
+(
+  cip CHAR(8) NOT NULL,
+  NomMembre VARCHAR NOT NULL,
+  id_status INT NOT NULL,
+  id_departement INT NOT NULL,
+  PRIMARY KEY (cip),
+  FOREIGN KEY (id_status) REFERENCES Status(id_status),
+  FOREIGN KEY (id_departement) REFERENCES Departement(id_departement)
+);
+
+CREATE TABLE Pavillon
+(
+  id_pavillon VARCHAR NOT NULL,
+  nom_pavillon VARCHAR NOT NULL,
+  id_campus INT NOT NULL,
+  PRIMARY KEY (id_pavillon),
+  FOREIGN KEY (id_campus) REFERENCES Campus(id_campus)
+);
+
+CREATE TABLE Local
+(
+  id_pavillon VARCHAR NOT NULL,
+  num_local INT NOT NULL,
+  Capacite INT NOT NULL,
+  id_fonction INT NOT NULL,
+  id_carac INT ARRAY,
+  Note VARCHAR,
+  PRIMARY KEY (num_local, id_pavillon),
+  --FOREIGN KEY (id_carac) REFERENCES Caracteristique(id_carac), Les array de clé ne sont pas suporté par ProgresSQL
+  FOREIGN KEY (id_pavillon) REFERENCES Pavillon(id_pavillon),
+  FOREIGN KEY (id_fonction) REFERENCES Fonction(id_fonction)
+);
+
+CREATE TABLE Reservation
+(
+  id_reservation INT NOT NULL,
+  date DATE NOT NULL,
+  heure_debut TIME NOT NULL,
+  heure_fin TIME NOT NULL,
+  cip CHAR(8) NOT NULL,
+  id_pavillon VARCHAR NOT NULL,
+  num_local INT NOT NULL,
+  PRIMARY KEY (id_reservation),
+  FOREIGN KEY (cip) REFERENCES Membre(cip),
+  FOREIGN KEY (num_local, id_pavillon) REFERENCES Local(num_local, id_pavillon)
+);
+
+CREATE TABLE TABLEAU
+(
+  id_reservation INT NOT NULL,
+  FOREIGN KEY (id_reservation) REFERENCES Reservation(id_reservation),
+);
