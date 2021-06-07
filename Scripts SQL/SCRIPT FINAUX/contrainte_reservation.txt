@@ -1,0 +1,117 @@
+CREATE FUNCTION insertion() RETURNS trigger AS $insertion$
+	BEGIN
+		IF NEW.date = OLD.date THEN
+			IF NEW.id_pavillon = OLD.id_pavillon THEN
+				IF NEW.num_local = OLD.num_local THEN
+					IF NEW.heure_debut < OLD.heure_debut THEN 
+						IF NEW.heure_debut > OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_debut > OLD.heure_fin THEN
+						IF NEW.heure_debut < OLD.heure_debut THEN 
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin < OLD.heure_debut THEN
+						IF NEW.heure_fin > OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin > OLD.heure_fin THEN
+						IF NEW.heure_fin < OLD.heure_debut THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_debut > OLD.heure_debut THEN
+						IF NEW.heure_fin > OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin > OLD.heure_fin THEN
+						IF NEW.heure_debut > OLD.heure_debut THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_debut < OLD.heure_debut THEN
+						IF NEW.heure_fin < OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin < OLD.heure_fin THEN
+						IF NEW.heure_debut < OLD.heure_debut THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+				END IF;
+			END IF;
+					
+			IF NEW.num_local = OLD.num_local THEN
+				IF NEW.id_pavillon = OLD.id_pavillon THEN
+					IF NEW.heure_debut < OLD.heure_debut THEN 
+						IF NEW.heure_debut > OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_debut > OLD.heure_fin THEN
+						IF NEW.heure_debut < OLD.heure_debut THEN 
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin < OLD.heure_debut THEN
+						IF NEW.heure_fin > OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin > OLD.heure_fin THEN
+						IF NEW.heure_fin < OLD.heure_debut THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_debut > OLD.heure_debut THEN
+						IF NEW.heure_fin > OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin > OLD.heure_fin THEN
+						IF NEW.heure_debut > OLD.heure_debut THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_debut < OLD.heure_debut THEN
+						IF NEW.heure_fin < OLD.heure_fin THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+
+					IF NEW.heure_fin < OLD.heure_fin THEN
+						IF NEW.heure_debut < OLD.heure_debut THEN
+							RAISE EXCEPTION 'local non reservable';
+						END IF;
+					END IF;
+				END IF;
+			END IF;
+		END IF;
+		RETURN NEW;
+	END;
+$insertion$ LANGUAGE plpgsql;
+
+CREATE TRIGGER insertion
+	BEFORE INSERT ON reservation
+	FOR EACH ROW
+	EXECUTE PROCEDURE insertion();
+
+CREATE UNIQUE INDEX ixx_reservation ON reservation (date, heure_debut, heure_fin, id_pavillon, num_local);
