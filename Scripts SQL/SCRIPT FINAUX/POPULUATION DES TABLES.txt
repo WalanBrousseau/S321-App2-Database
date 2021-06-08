@@ -166,5 +166,3 @@ INSERT INTO reservation VALUES(2, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'l
 INSERT INTO reservation VALUES(3, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'dioj2117', 'C2', 1004);
 INSERT INTO reservation VALUES(4, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'libv2001', 'D7', 3020);
 INSERT INTO reservation VALUES(5, '{2021-05-12}', '{05:05:05}', '{12:12:12}', 'cars2019', 'D7', 3019);
-
-

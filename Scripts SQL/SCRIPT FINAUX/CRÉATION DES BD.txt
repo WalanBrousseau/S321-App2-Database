@@ -82,9 +82,3 @@ CREATE TABLE Reservation
   FOREIGN KEY (cip) REFERENCES Membre(cip),
   FOREIGN KEY (num_local, id_pavillon) REFERENCES Local(num_local, id_pavillon)
 );
-
-CREATE TABLE TABLEAU
-(
-  id_reservation INT NOT NULL,
-  FOREIGN KEY (id_reservation) REFERENCES Reservation(id_reservation),
-);
